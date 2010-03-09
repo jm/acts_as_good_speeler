@@ -1,4 +1,4 @@
-Inflector.inflections do |inflect|
+ActiveSupport::Inflector.inflections do |inflect|
   inflect.plural(/$/, 's')
   inflect.plural(/s$/i, 's')
   inflect.plural(/(bu)s$/i, '\1ses')
