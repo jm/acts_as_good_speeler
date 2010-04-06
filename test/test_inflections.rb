@@ -4,6 +4,7 @@ require 'test/unit'
 
 begin
   require File.dirname(__FILE__) + '/../../../rails/activesupport/lib/active_support/inflector.rb'
+  require File.dirname(__FILE__) + '/../../../rails/activesupport/lib/active_support/core_ext/module.rb'
   require File.dirname(__FILE__) + '/../../../rails/activesupport/lib/active_support/core_ext/string.rb'
 rescue LoadError
   raise "You need to freeze Rails to be able to run the tests."
@@ -70,9 +71,9 @@ class TestInflections < Test::Unit::TestCase
     ["dress", "dress"],
     ["press", "press"]
   ]
-  
+
   def setup
-    Inflector.inflections.clear
+    ActiveSupport::Inflector.inflections.clear
   end
   
   def test_stock_inflections_suck
